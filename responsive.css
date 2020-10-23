@@ -110,14 +110,7 @@
     bottom: -12px;
     width: 70%;
   }
-  .button:hover:after {
-    transition: 0.2 ease;
-    width: 90%;
-  }
-  .button:before:after {
-    transition: 0.2 ease;
-    width: 100%;
-  }
+
   /* rotação do botao */
   .menuOpen .button {
     transform: rotate(45deg);
