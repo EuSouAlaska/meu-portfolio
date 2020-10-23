@@ -9,6 +9,7 @@
     max-width: 100%;
     z-index: -99;
     display: block;
+    right: 0;
   }
   .titulo2 h1:after {
     width: 50%;
@@ -175,6 +176,11 @@
   }
   #container {
     max-width: 300px;
+  }
+  .container-nuvem {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
   .titulo {
     font-size: 2rem;
