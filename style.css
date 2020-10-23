@@ -8,6 +8,11 @@ li {
   margin: 0px;
   padding: 0px;
 }
+*:focus,
+*:active,
+*:hover {
+  outline: 0;
+}
 
 li {
   list-style: none;
