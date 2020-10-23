@@ -89,7 +89,7 @@ body {
 
 /* FIM DO RESET */
 #switcher {
-  background-image: url("/image/moon.svg");
+  background-image: url("image/moon.svg");
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
@@ -98,7 +98,7 @@ body {
   cursor: pointer;
 }
 .ativo #switcher {
-  background-image: url("/image/sun.svg");
+  background-image: url("image/sun.svg");
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
@@ -291,7 +291,7 @@ header ul li:hover::before {
 }
 .titulo2 h1:after {
   content: "";
-  background-image: url(/image/separador.svg);
+  background-image: url(image/separador.svg);
   width: 50%;
   height: 2.2rem;
   background-size: contain;
@@ -301,7 +301,7 @@ header ul li:hover::before {
 }
 .ativo .titulo2 h1:after {
   content: "";
-  background-image: url(/image/darkmode/separador.svg);
+  background-image: url(image/darkmode/separador.svg);
   width: 50%;
   height: 2.2rem;
   background-size: contain;
@@ -360,7 +360,7 @@ header ul li:hover::before {
 }
 .botoes button:nth-child(2):before {
   content: "";
-  background-image: url("/image/linkedin.svg");
+  background-image: url("image/linkedin.svg");
   display: inline-flex;
   width: 3rem;
   height: 2.2rem;
@@ -368,10 +368,10 @@ header ul li:hover::before {
   vertical-align: middle;
 }
 .ativo .botoes button:nth-child(2):before {
-  background-image: url("/image/darkmode/linkedin.svg");
+  background-image: url("image/darkmode/linkedin.svg");
 }
 .ativo .botoes button:nth-child(1):before {
-  background-image: url("/image/darkmode/github.svg");
+  background-image: url("image/darkmode/github.svg");
 }
 
 .botoes button:nth-child(1) {
@@ -389,7 +389,7 @@ header ul li:hover::before {
 }
 .botoes button:nth-child(1):before {
   content: "";
-  background-image: url("/image/github.svg");
+  background-image: url("image/github.svg");
   display: inline-flex;
   width: 3rem;
   height: 2.2rem;
