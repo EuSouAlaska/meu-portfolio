@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+body,
+p,
+h1,
+h2,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+:root {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  height: 3000px;
+  font-family: Inconsolata;
+  color: var(--text-color);
+  background: var(--bg-body);
+  /* variaveis */
+  --text-color: #333333;
+  --nuvem-fill: #9bf6ff;
+  --bg-body: white;
+  --green: #cbffbf;
+  --blue: #a0c4ff;
+  --orange: #ffd7a6;
+  --pink: #ffaead;
+  --yellow: #fdffb6;
+  --radius: 0.4rem;
+  --linkedin: #0073b1;
+}
+
+.ativo {
+  --nuvem-fill: #c4c4c4;
+  --text-color: white;
+}
+
+/* FIM DO RESET */
+#container {
+  margin: 0 auto;
+  padding: 0 2rem 0 2rem;
+  max-width: 144rem;
+}
+.container-nuvem {
+  position: absolute;
+  left: 0;
+  top: 50vh;
+  max-width: clamp(50rem, 50vw, 60rem);
+}
+.segura {
+  width: 100%;
+  overflow: hidden;
+}
+svg {
+  width: 100%;
+  height: 34rem;
+}
+svg path {
+  fill: var(--nuvem-fill);
+}
+
+/* ondas  da nuvem*/
+
+.wave1,
+.wave2,
+.wave3,
+.wave4,
+.wave5,
+.wave6,
+.wave7,
+.wave8 {
+  animation: nuvem 2s ease-in-out alternate infinite;
+}
+
+@keyframes nuvem {
+  from {
+    transform: translate3d(30px, -6%, 0);
+  }
+
+  to {
+    transform: translate3d(30px, 0px, 0);
+  }
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(20px);
+}
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+  z-index: 30;
+}
+
+header ul li {
+  display: block;
+  padding: 2rem;
+  cursor: pointer;
+  margin-right: 8rem;
+  position: relative;
+  font-weight: bold;
+}
+header ul li::before {
+  content: "";
+  display: block;
+  width: 30%;
+  position: absolute;
+  height: 30%;
+  background-color: currentColor;
+  left: 1rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: -99;
+  top: 2.7rem;
+  border-radius: 0.4rem;
+  opacity: 60%;
+}
+
+header ul li:nth-child(2):before {
+  background-color: var(--yellow);
+  opacity: 80%;
+}
+header ul li:nth-child(3):before {
+  background-color: var(--green);
+  width: 40%;
+}
+header ul li:nth-child(4):before {
+  background-color: var(--orange);
+}
+
+header ul li:hover::before {
+  width: 100%;
+  opacity: 100%;
+  height: 60%;
+  top: 1.4rem;
+  left: 0;
+}
+.titulo {
+  display: block;
+  padding-top: 1.2rem;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: clamp(10rem, 20rem, 40vh);
+  font-size: 2.8rem;
+}
+
+.boneco img {
+  height: 29rem;
+  position: absolute;
+  top: -16rem;
+  display: block;
+  left: 15rem;
+  animation: nuvem 2s ease-in-out alternate infinite;
+}
+.screens {
+  height: 14rem;
+  position: absolute;
+  top: -17rem;
+  display: block;
+  margin-left: 15vh;
+  animation: nuvem 2s ease-in-out alternate infinite;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 12rem;
+  margin-right: 20vh;
+}
+
+.titulo2 h1 {
+  display: block;
+  padding: 4rem 0 0 0;
+  font-size: 4.2rem;
+}
+.titulo2 h1:after {
+  content: "";
+  background-image: url(/image/separador.svg);
+  width: 80%;
+  height: 2.2rem;
+  background-size: contain;
+  margin-top: 2rem;
+  background-repeat: no-repeat;
+  margin: 2rem auto 2rem auto;
+  display: block;
+}
+.titulo2 h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.titulo2 p {
+  padding-top: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.botoes {
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.part2 {
+  margin-top: 30rem;
+  width: 100%;
+  height: 70rem;
+  background: #5bd2fc;
+}
+.botoes button {
+  padding: 1.3rem 3rem;
+  cursor: pointer;
+  border: none;
+  color: var(--text-color);
+  border-radius: var(--radius);
+  background-color: currentColor;
+  font-size: 1.6rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.botoes button a {
+  color: var(--text-color);
+}
+.botoes button:nth-child(2) {
+  border: 2px solid;
+  border-color: var(--blue);
+  color: #fff;
+  border-bottom: 3px solid var(--blue);
+
+  background-image: linear-gradient(45deg, var(--blue) 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease;
+  transition: background 600ms ease;
+}
+.botoes button:nth-child(2):before {
+  content: "";
+  background-image: url("/image/linkedin.svg");
+  display: inline-flex;
+  width: 3rem;
+  height: 2.2rem;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.botoes button:nth-child(1) {
+  border: 2px solid;
+  border-color: var(--orange);
+  color: #fff;
+  border-bottom: 3px solid var(--orange);
+  background-image: linear-gradient(45deg, var(--orange) 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 600ms ease;
+  transition: background 600ms ease;
+  margin-right: 20px;
+}
+.botoes button:nth-child(1):before {
+  content: "";
+  background-image: url("/image/github.svg");
+  display: inline-flex;
+  width: 3rem;
+  height: 2.2rem;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.botoes button:nth-child(2):hover {
+  background-position: 0;
+}
+
+.botoes button:nth-child(1):hover {
+  background-position: 0;
+}
