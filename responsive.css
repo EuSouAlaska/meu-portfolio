@@ -173,6 +173,7 @@
 @media (max-width: 420px) {
   .menu {
     right: 0px;
+    z-index: 99;
   }
   #container {
     max-width: 300px;
