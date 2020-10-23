@@ -42,40 +42,81 @@ body {
   font-family: Inconsolata;
   color: var(--text-color);
   background: var(--bg-body);
+  transition: background 0.3s ease;
   /* variaveis */
   --text-color: #333333;
   --nuvem-fill: #9bf6ff;
-  --bg-body: white;
-  --green: #cbffbf;
+  --bg-body: rgba(216, 216, 216, 0.2);
   --blue: #a0c4ff;
   --orange: #ffd7a6;
   --pink: #ffaead;
   --yellow: #fdffb6;
+  --green: #caffbf;
   --radius: 0.4rem;
   --linkedin: #0073b1;
+  --shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  --color-alternate: #333333;
+  --opacity-yellow: 100%;
+  --selection: var(--yellow);
+}
+.ativo {
+  --nuvem-fill: rgba(238, 238, 238, 0.5);
+  --text-color: white;
+  --bg-body: #282a2d;
+  --shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  --color-alternate: black;
+  --blue: #516fb7;
+  --orange: #b68052;
+  --pink: #db7e86;
+  --yellow: #dbcd2a;
+  --green: #61b760;
+  --opacity-yellow: 100%;
+  --selection: var(--green);
 }
 
-.ativo {
-  --nuvem-fill: #c4c4c4;
-  --text-color: white;
+*::selection {
+  background: var(--selection);
+  color: var(--text-color);
+}
+*::-moz-selection {
+  background: var(--selection);
+
+  color: var(--text-color);
 }
 
 /* FIM DO RESET */
+#switcher {
+  background-image: url("/image/moon.svg");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  margin: auto 0;
+  padding-right: 6rem;
+  cursor: pointer;
+}
+.ativo #switcher {
+  background-image: url("/image/sun.svg");
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  margin: auto 0;
+  padding-right: 6rem;
+  cursor: pointer;
+}
+
 #container {
   margin: 0 auto;
   padding: 0 2rem 0 2rem;
-  max-width: 144rem;
+  max-width: 120rem;
+  position: relative;
 }
 .container-nuvem {
   position: absolute;
   left: 0;
-  top: 50vh;
+  top: 22vh;
   max-width: clamp(50rem, 50vw, 60rem);
 }
-.segura {
-  width: 100%;
-  overflow: hidden;
-}
+
 svg {
   width: 100%;
   height: 34rem;
@@ -108,12 +149,19 @@ svg path {
 }
 
 header {
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
   z-index: 1;
   position: sticky;
   top: 0;
   backdrop-filter: saturate(180%) blur(20px);
+  background-color: var(--header);
+}
+.header-container {
+  max-width: 1200px;
+  padding-left: 3rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 header ul {
   display: flex;
@@ -129,6 +177,10 @@ header ul li {
   margin-right: 8rem;
   position: relative;
   font-weight: bold;
+  letter-spacing: 1px;
+}
+header ul li:hover {
+  color: var(--color-alternate);
 }
 header ul li::before {
   content: "";
@@ -148,7 +200,7 @@ header ul li::before {
 
 header ul li:nth-child(2):before {
   background-color: var(--yellow);
-  opacity: 80%;
+  opacity: var(--opacity-yellow);
 }
 header ul li:nth-child(3):before {
   background-color: var(--green);
@@ -165,13 +217,16 @@ header ul li:hover::before {
   top: 1.4rem;
   left: 0;
 }
+#contato {
+  margin-right: 20px;
+}
 .titulo {
   display: block;
   padding-top: 1.2rem;
   cursor: pointer;
   margin-right: auto;
-  margin-left: clamp(10rem, 20rem, 40vh);
   font-size: 2.8rem;
+  margin-left: 8rem;
 }
 
 .boneco img {
@@ -182,6 +237,10 @@ header ul li:hover::before {
   left: 15rem;
   animation: nuvem 2s ease-in-out alternate infinite;
 }
+.boneco img path {
+  fill: red;
+}
+
 .screens {
   height: 14rem;
   position: absolute;
@@ -204,9 +263,39 @@ header ul li:hover::before {
   padding: 4rem 0 0 0;
   font-size: 4.2rem;
 }
+.titulo2 h2::after {
+  content: "|";
+  opacity: 1;
+  margin-left: 5px;
+  display: inline-block;
+  animation: piska 0.9s infinite;
+}
+.titulo2 h2 {
+  letter-spacing: 1px;
+}
+@keyframes piska {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .titulo2 h1:after {
   content: "";
   background-image: url(/image/separador.svg);
+  width: 80%;
+  height: 2.2rem;
+  background-size: contain;
+  margin-top: 2rem;
+  background-repeat: no-repeat;
+  margin: 2rem auto 2rem auto;
+  display: block;
+}
+.ativo .titulo2 h1:after {
+  content: "";
+  background-image: url(/image/darkmode/separador.svg);
   width: 80%;
   height: 2.2rem;
   background-size: contain;
@@ -219,6 +308,7 @@ header ul li:hover::before {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 400;
+  max-width: 500px;
 }
 .titulo2 p {
   padding-top: 3rem;
@@ -233,32 +323,29 @@ header ul li:hover::before {
   justify-content: space-around;
 }
 
-.part2 {
-  margin-top: 30rem;
-  width: 100%;
-  height: 70rem;
-  background: #5bd2fc;
-}
 .botoes button {
-  padding: 1.3rem 3rem;
   cursor: pointer;
   border: none;
   color: var(--text-color);
   border-radius: var(--radius);
-  background-color: currentColor;
+  background-color: transparent;
   font-size: 1.6rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 500;
   vertical-align: middle;
+  padding: 1.3rem 3rem;
 }
 .botoes button a {
   color: var(--text-color);
+  display: inline-block;
 }
+
 .botoes button:nth-child(2) {
   border: 2px solid;
   border-color: var(--blue);
   color: #fff;
   border-bottom: 3px solid var(--blue);
+  border-right: 3px solid var(--blue);
 
   background-image: linear-gradient(45deg, var(--blue) 50%, transparent 50%);
   background-position: 100%;
@@ -275,11 +362,19 @@ header ul li:hover::before {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
+.ativo .botoes button:nth-child(2):before {
+  background-image: url("/image/darkmode/linkedin.svg");
+}
+.ativo .botoes button:nth-child(1):before {
+  background-image: url("/image/darkmode/github.svg");
+}
+
 .botoes button:nth-child(1) {
   border: 2px solid;
   border-color: var(--orange);
   color: #fff;
   border-bottom: 3px solid var(--orange);
+  border-right: 3px solid var(--orange);
   background-image: linear-gradient(45deg, var(--orange) 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
@@ -302,4 +397,11 @@ header ul li:hover::before {
 
 .botoes button:nth-child(1):hover {
   background-position: 0;
+}
+
+.part2 {
+  margin-top: 30rem;
+  width: 100%;
+  height: 70rem;
+  background: #0e1013;
 }
