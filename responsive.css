@@ -73,13 +73,14 @@
     top: -10px;
     border-radius: 15px;
     cursor: pointer;
-    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.2s ease-in-out);
   }
   main.menuOpen {
     height: 320px;
     background-color: var(--header-menu);
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: var(--shadow);
+    width: 100%;
   }
   /* tres traçõs */
   .button {
@@ -89,7 +90,7 @@
     height: 3px;
     position: absolute;
     top: 42px;
-    left: 25px;
+    right: 25px;
     transition: 0.4s ease-in-out;
   }
   .button:after,
@@ -137,12 +138,13 @@
     margin-bottom: 35px;
     text-align: center;
     display: none;
-    opacity: 0;
   }
 
   .menuOpen .atalhos p {
     animation: vemNenem 1s ease forwards;
     display: block;
+    opacity: 0;
+    z-index: 200;
   }
 
   .atalhos img {
