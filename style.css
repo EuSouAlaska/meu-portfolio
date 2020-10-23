@@ -43,6 +43,7 @@ body {
   color: var(--text-color);
   background: var(--bg-body);
   transition: background 0.3s ease;
+
   /* variaveis */
   --text-color: #333333;
   --nuvem-fill: #9bf6ff;
@@ -58,6 +59,7 @@ body {
   --color-alternate: #333333;
   --opacity-yellow: 100%;
   --selection: var(--yellow);
+  --header-menu: rgb(255, 255, 255);
 }
 .ativo {
   --nuvem-fill: rgba(238, 238, 238, 0.5);
@@ -72,6 +74,7 @@ body {
   --green: #61b760;
   --opacity-yellow: 100%;
   --selection: var(--green);
+  --header-menu: #282a2df8;
 }
 
 *::selection {
@@ -162,6 +165,9 @@ header {
   padding-right: 2rem;
   margin-left: auto;
   margin-right: auto;
+}
+.menu {
+  display: none;
 }
 header ul {
   display: flex;
@@ -262,11 +268,12 @@ header ul li:hover::before {
   display: block;
   padding: 4rem 0 0 0;
   font-size: 4.2rem;
+  width: 360px;
 }
 .titulo2 h2::after {
   content: "|";
   opacity: 1;
-  margin-left: 5px;
+  margin-left: 1px;
   display: inline-block;
   animation: piska 0.9s infinite;
 }
@@ -285,10 +292,9 @@ header ul li:hover::before {
 .titulo2 h1:after {
   content: "";
   background-image: url(/image/separador.svg);
-  width: 80%;
+  width: 50%;
   height: 2.2rem;
   background-size: contain;
-  margin-top: 2rem;
   background-repeat: no-repeat;
   margin: 2rem auto 2rem auto;
   display: block;
@@ -296,10 +302,9 @@ header ul li:hover::before {
 .ativo .titulo2 h1:after {
   content: "";
   background-image: url(/image/darkmode/separador.svg);
-  width: 80%;
+  width: 50%;
   height: 2.2rem;
   background-size: contain;
-  margin-top: 2rem;
   background-repeat: no-repeat;
   margin: 2rem auto 2rem auto;
   display: block;

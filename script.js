@@ -18,3 +18,18 @@ function troca() {
   const selectBody = document.body.classList.toggle("ativo");
 }
 themeSwitcher.addEventListener("click", troca);
+
+//menu mobile 
+const menu = document.querySelector(".menu");
+
+function callback() {
+  menu.classList.toggle("menuOpen");
+  menu.classList.toggle("menuClosed");
+}
+function target(event) {
+  if (event.target != menu) {
+    menu.classList.add("menuClosed");
+    menu.classList.remove("menuOpen");
+  }
+}
+document.addEventListener("click", target);
