@@ -1,0 +1,238 @@
+@media (max-width: 980px) {
+  #container {
+    max-width: 490px;
+  }
+  .container-nuvem {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    max-width: 100%;
+    z-index: -99;
+    display: block;
+  }
+  .titulo2 h1:after {
+    width: 50%;
+  }
+  .segura {
+    position: relative;
+    top: -100px;
+    z-index: -99;
+    padding: 0 1rem 0 1rem;
+  }
+  .wave1,
+  .wave2,
+  .wave3,
+  .wave4,
+  .wave5,
+  .wave6,
+  .wave7,
+  .wave8 {
+    animation: inherit;
+  }
+  .boneco {
+    display: none;
+  }
+  body {
+  }
+  .screens {
+    display: none;
+  }
+  .titulo {
+    margin: 0 auto;
+    padding: 20px 0 20px 0;
+  }
+  .titulo2 h2 {
+    padding-bottom: 4rem;
+  }
+
+  header ul li {
+    display: none;
+  }
+  header ul i {
+    display: inline-block;
+    padding-left: 40px;
+    position: absolute;
+    left: 40px;
+    top: 25px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12rem;
+    margin-right: 0;
+  }
+  .menu {
+    display: block;
+    background-color: none;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  main.menuOpen {
+    height: 320px;
+    background-color: var(--header-menu);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: var(--shadow);
+  }
+  /* tres traçõs */
+  .button {
+    display: block;
+    background: var(--text-color);
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    top: 42px;
+    left: 25px;
+    transition: 0.4s ease-in-out;
+  }
+  .button:after,
+  .button:before {
+    display: block;
+    background: rgb(228, 228, 228);
+    height: 100%;
+    content: "";
+    position: absolute;
+    transition: 0.4s ease-in-out;
+    background: var(--text-color);
+  }
+  .button:before {
+    top: -12px;
+    width: 80%;
+  }
+  .button:after {
+    bottom: -12px;
+    width: 70%;
+  }
+  .button:hover:after {
+    transition: 0.2 ease;
+    width: 90%;
+  }
+  .button:before:after {
+    transition: 0.2 ease;
+    width: 100%;
+  }
+  /* rotação do botao */
+  .menuOpen .button {
+    transform: rotate(45deg);
+  }
+  .menuOpen .button:before {
+    transform: rotate(90deg);
+    top: 0;
+    width: 100%;
+  }
+  .menuOpen .button:after {
+    transform: rotate(90deg);
+    bottom: 0;
+    width: 100%;
+  }
+
+  .atalhos {
+    margin-top: 90px;
+  }
+
+  .atalhos p {
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 35px;
+    text-align: center;
+    display: none;
+    opacity: 0;
+  }
+
+  .menuOpen .atalhos p {
+    animation: vemNenem 1s ease forwards;
+    display: block;
+  }
+
+  .atalhos img {
+    opacity: 0;
+    display: block;
+    margin: 10px auto;
+  }
+  .menuOpen .atalhos img {
+    animation: vemNenem 0.8s ease forwards;
+  }
+
+  @keyframes vemNenem {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .menu {
+    right: 0px;
+  }
+  #container {
+    max-width: 300px;
+  }
+  .titulo {
+    font-size: 2rem;
+  }
+  .segura {
+    position: relative;
+    top: -120px;
+    z-index: -99;
+  }
+
+  .button {
+    height: 2px;
+    width: 35px;
+  }
+  .titulo2 h1 {
+    font-size: 2.6rem;
+    max-width: 300px;
+    text-align: center;
+  }
+  .titulo2 h1:after {
+    margin-bottom: 0;
+  }
+
+  .titulo2 h2 {
+    font-size: 1.2rem;
+    max-width: 200px;
+    margin: 30px auto 0 auto;
+    line-height: 1.4;
+  }
+  .botoes button {
+    cursor: pointer;
+    border: none;
+    color: var(--text-color);
+    border-radius: var(--radius);
+    background-color: transparent;
+    font-size: 1.6rem;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    vertical-align: middle;
+    padding: 1.1rem 1.1rem;
+  }
+  header ul i {
+    display: inline-block;
+    padding-left: 40px;
+    position: absolute;
+    left: 20px;
+    top: 22px;
+  }
+  .botoes button a {
+    font-size: 12px;
+  }
+  .botoes button:nth-child(1) {
+    margin-right: 20px;
+  }
+  .botoes {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
